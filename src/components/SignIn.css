@@ -1,15 +1,17 @@
 /* SignIn.css */
 
-body {
+/* index.css or App.css */
+html, body, #root {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
-  color: red;
 }
+
 
 /* Container that fills screen */
 .signin-container {
+  width: 100% !important;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -24,7 +26,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 40px 30px;
   border-radius: 15px;
-  width: 100%;
+  /* width: 100%; */
   max-width: 400px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(12px);

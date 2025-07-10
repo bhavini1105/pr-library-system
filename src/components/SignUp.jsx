@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../firebase/config";
 import { useNavigate } from "react-router-dom";
-
+import './SignIn.css'; // ✅ reuse the same styles
 
 const SignUp = () => {
   const [user, setUser] = useState({});
@@ -29,12 +29,12 @@ const SignUp = () => {
   };
 
   return (
-    <div className="signup-container">
-      <div className="signup-box">
-        <h2 className="text-center mb-4 ">Create Your Account</h2>
+    <div className="signin-container">
+      <div className="signin-box mx-auto">
+        <h2 className="text-center mb-4">📚 Create Your Account</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="email" className="form-label text-white">Email:</label>
+            <label htmlFor="email" className="form-label">Email:</label>
             <input
               type="email"
               name="email"
@@ -47,7 +47,7 @@ const SignUp = () => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="password" className="form-label text-white">Password:</label>
+            <label htmlFor="password" className="form-label">Password:</label>
             <input
               name="password"
               value={user.password || ""}

@@ -2,7 +2,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../firebase/config";
 import { useNavigate } from "react-router-dom";
-import './SignIn.css'
+import './SignIn.css';
 
 const SignIn = () => {
   const [user, setUser] = useState({});
@@ -21,7 +21,7 @@ const SignIn = () => {
       .then((res) => {
         console.log("Sign-In successful");
         localStorage.setItem("user", JSON.stringify(res.user));
-        navigate("/");
+        navigate("/dashboard");
       })
       .catch((error) => {
         console.error("Sign-In failed:", error.code);
@@ -33,7 +33,7 @@ const SignIn = () => {
 
   return (
     <div className="signin-container">
-      <div className="signin-box">
+      <div className="signin-box mx-auto">
         <h2 className="text-center mb-4">📘 Welcome Back</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
