@@ -1,6 +1,6 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, googleProvider } from "../firebase/config";
 import React, { useState } from "react";
-import { auth } from "../firebase/config";
 import { useNavigate } from "react-router-dom";
 import './SignIn.css';
 
@@ -64,6 +64,23 @@ const SignIn = () => {
           </div>
           <button type="submit" className="btn btn-light w-100">Sign In</button>
         </form>
+
+        <button
+          type="button"
+          className="btn btn-danger w-100 mt-3"
+          onClick={async () => {
+            try {
+              const res = await signInWithPopup(auth, googleProvider);
+              localStorage.setItem("user", JSON.stringify(res.user));
+              navigate("/list");
+            } catch (err) {
+              console.error("Google sign-in error:", err);
+              alert("Failed to sign in with Google");
+            }
+          }}
+        >
+          Sign in with Google
+        </button>
       </div>
     </div>
   );
