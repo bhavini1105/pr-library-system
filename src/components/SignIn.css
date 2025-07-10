@@ -1,0 +1,69 @@
+/* SignIn.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+  color: red;
+}
+
+/* Container that fills screen */
+.signin-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 20px;
+}
+
+/* Box around the form */
+.signin-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 40px 30px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  color: #ffffff;
+}
+
+/* Headings */
+.signin-box h2 {
+  font-weight: bold;
+}
+
+/* Labels */
+.signin-box .form-label {
+  color: #f1f1f1;
+  font-weight: 500;
+}
+
+/* Inputs */
+.signin-box .form-control {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+.signin-box .form-control::placeholder {
+  color: #ddd;
+}
+
+/* Button */
+.signin-box .btn-light {
+  font-weight: bold;
+  background-color: white;
+  color: #333;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.signin-box .btn-light:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-2px);
+}
